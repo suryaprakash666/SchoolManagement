@@ -1,0 +1,88 @@
+/* Reset some default styles */
+body, h3, form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #469ddf;
+    padding: 20px;
+}
+
+/* Header styling */
+h3 {
+    color: #333;
+    text-align: center;
+}
+
+/* Form styling */
+.studentreferenceformultitasking{
+    margin-bottom: 1px;
+    max-width: 30%;
+}
+
+.studentreferenceforsendmessage{
+    max-width: 30%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input {
+    width: 30%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #08900d;
+    color: #fff;
+    padding: 5px 5px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #05f929;
+}
+
+/* Adjust styling for specific elements */
+#message, #studentrefer, #studentprf, #studentdet, #contactparent, #Assignmark {
+    width: calc(100% - 10px);
+}
+
+/* Add some spacing between buttons */
+button + button {
+    margin-left: 10px;
+}
+
+img{
+    height: 100px;
+    width: 100px;
+}
+
+/*with top tag we set the element at top and with right tag we set it to the right
+position tag is nessecery because accroding to it final position of the element will be defined like top,bottom,right,left*/
+.topright{
+    position: absolute;
+    top:10px;
+    right:10px;
+}
+
+.multitaskingbuttons{
+    max-width: 10%;
+}
+
+.dynamicview{
+   position: absolute;
+   top:10px;
+   right:10px;
+   transform:translateY(50%);
+}

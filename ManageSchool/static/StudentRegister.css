@@ -1,0 +1,53 @@
+/* StudentRegister.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f6f7;
+    margin: 0;
+    padding: 0;
+}
+.studentform {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #50c7ee; /* Change the background color */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #3cf56a;
+}
+input[type="text"]:focus + label,
+input[type="date"]:focus + label {
+    top: -15px;
+    font-size: 12px;
+    color: #007bff;
+}
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 30px auto; /* Center the button */
+}
+button:hover {
+    background-color: #0056b3;
+}

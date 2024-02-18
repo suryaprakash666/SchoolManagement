@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'staffviewpage.css' %}"/>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<body>
+    <h3>Manage Everything Here</h3>
+
+   <!--Form1/Form for perform multiple tasks on students by any reference-->
+   <form method="post" action="{% url 'Staffhome' %}">
+       {% csrf_token %}
+    <label for="studentrefermt"></label>
+    <input type="text" id="studentrefermt" name="StudentReference" placeholder="Enter any reference" class="studentreferenceformultitasking">
+   <button type="submit" name="buttonClicked" value="button1">Get Student Details</button>
+   <button type="submit" name="buttonClicked" value="button2">Contact Parent</button>
+   <button type="submit" name="buttonClicked" value="button3">Analyze Student Performance</button>
+   </form>
+
+
+
+   <!--Form2/form for sending meesage to a student by any reference-->
+   <form method="post" action="{% url 'Sendmessage' %}">
+    <label for="sendmessage"></label>
+    <input type="text" id="sendmessage" name="Sendmessage" placeholder="Write any message">
+    <label for="studentrefersm"></label>
+    <input type="text" id="studentrefersm" name="StudentReference" class="studentreferenceforsendmessage" placeholder="Enter any reference">
+   <button type="submit">Send Message</button>
+   </form>
+
+    <!--Form3/Form for setting future tasks-->
+   <form>
+    <label for="settask"></label>
+    <input type="text" id="settask" name="Settask" placeholder="Set Task">
+   <button type="submit">Set Task</button>
+   </form>
+
+    <!--Form4/form for applying leave-->
+   <form>
+    <label for="levaeapply"></label>
+    <input type="text" id="levaeapply" name="Applyleave" placeholder="Apply Leave">
+   <button type="submit">Apply</button>
+   </form>
+
+    <!--Staff profile picture-->
+   <img src="{% static 'staffprofile.jpg' %}" alt="Error Loading image" class="topright">
+
+    <!--Iframe tag used-->
+    <!--<iframe src="/page/dynamicview" width="400px" height="400px" frameborder="5px" align="center" class="dynamicview">
+    </iframe>-->
+   <footer>
+    <a href="About">About</a>
+    <a href="Contact Admin">Contact Admin</a>
+    <a href="Join Staff Group">Join Staff Group</a>
+   </footer>
+<table border="1">
+         <thead>
+         <tr>
+           {% if data %}
+             {% for key,value in data.0.items %}
+             <th>
+                 {{key}}
+             </th>
+             {% endfor %}
+             {% endif %}
+         </tr>
+         </thead>
+     <tbody>
+     <tr>
+     </tr>
+     {% for data in data %}
+     <tr>
+         {% for key,value in data.items %}
+         <td>
+             {{value}}
+         </td>
+         {% endfor %}
+     </tr>
+     {% endfor %}
+
+     </tbody>
+       </table>
+</body>
+    </html>
